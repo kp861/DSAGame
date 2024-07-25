@@ -9,7 +9,7 @@ public class BubbleSortDragDrop : MonoBehaviour, IPointerDownHandler, IBeginDrag
     private Vector2 originalPosition;
     private Transform originalParent;
     private ArrayBubbleSort originalSlot;
-    //private bool isDroppedInZone = false;
+    private bool isDroppedInZone = false;
     private ScoreKeeper scoreKeeper;
     private GameObject[] blocks;
     public AudioSource as1;

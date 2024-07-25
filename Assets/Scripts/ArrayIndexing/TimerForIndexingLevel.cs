@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,10 +10,10 @@ public class TimerForIndexingLevel : MonoBehaviour
     public float fillFraction;
     public delegate void OnTimerEnd();
     public static event OnTimerEnd TimerEnded;
-
+    //public GameObject panel;
     [SerializeField] private Image timerImage;
     private bool hasEnded = false;
-
+    public GameObject panel;
     private void Start()
     {
         ResetTimer();
@@ -23,6 +22,10 @@ public class TimerForIndexingLevel : MonoBehaviour
 
     void Update()
     {
+        //if (panel.active)
+        //{
+        //    isTimerRunning = false;
+        //}
         if (isTimerRunning)
         {
             UpdateTimer();

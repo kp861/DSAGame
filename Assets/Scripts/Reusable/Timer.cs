@@ -12,18 +12,33 @@ public class Timer : MonoBehaviour
     public float fillFraction;
     public delegate void OnTimerEnd();
     public static event OnTimerEnd TimerEnded;
-
+    public GameObject panel;
     [SerializeField] public Image timerImage;
     private bool hasEnded = false;
 
     private void Start()
     {
         ResetTimer();
-        timerImage.fillAmount = 1; // Ensure the timer is visible at the start
+        timerImage.fillAmount = 1; 
     }
 
     void Update()
     {
+
+        if (panel.active)
+        {
+            isTimerRunning = false;
+        }
+        //if (!panel.active)
+        //{
+        //    CheckForMouseClick();
+        //    //isTimerRunning = true;
+        //}
+
+        //if (!panel.active)
+        //{
+        //    isTimerRunning = true;
+        //}
         if (isTimerRunning)
         {
             UpdateTimer();
@@ -32,11 +47,12 @@ public class Timer : MonoBehaviour
         {
             CheckForMouseClick();
         }
+
     }
 
     private void CheckForMouseClick()
     {
-        if (Input.GetMouseButtonDown(0)) // Left mouse button click
+        if (Input.GetMouseButtonDown(0))
         {
             if (!IsPointerOverButton())
             {
@@ -80,7 +96,6 @@ public class Timer : MonoBehaviour
             {
                 isAnswering = false;
                 timerValue = TimeToCompleteLevel;
-                // You can add logic here if needed when switching to the next state
             }
         }
         else
@@ -103,14 +118,13 @@ public class Timer : MonoBehaviour
 
     private void HandleGameOver()
     {
-        Debug.Log("Time's up! Player lost.");
         StopTimer();
     }
 
     private void ResetTimer()
     {
         timerValue = TimeToCompleteLevel;
-        fillFraction = 1; // Ensure the timer starts full
+        fillFraction = 1;
     }
 
     public void StartTimer()

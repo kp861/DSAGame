@@ -7,8 +7,6 @@ public class PanelOpener : MonoBehaviour
 {
     public GameObject panel;
    
-    
-
     public void OpenPanel()
     {
         if (panel != null)
