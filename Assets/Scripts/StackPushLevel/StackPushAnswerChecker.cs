@@ -1,12 +1,9 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-using System.Collections.Generic;
 
 public class StackPushAnswerChecker : MonoBehaviour
 {
-
     public Button confirmationButton;
     [SerializeField] TextMeshProUGUI scoreText;
     ScoreKeeper scoreKeeper;
@@ -14,8 +11,6 @@ public class StackPushAnswerChecker : MonoBehaviour
     public AudioSource audioSource1;
     public AudioSource audioSource2;
     SceneLoader sceneLoader;
-   
-
 
     private void Start()
     {
@@ -37,9 +32,7 @@ public class StackPushAnswerChecker : MonoBehaviour
         if (arr[5])
         {
             audioSource2.Play();
-            scoreKeeper.DecrementScore(10);
-            Debug.Log("Stack Overflow");
-            
+            scoreKeeper.DecrementScore(10); 
             sceneLoader.LoadSceneWithDelay("StackLevel", 1f);
             return;
         }
@@ -47,9 +40,7 @@ public class StackPushAnswerChecker : MonoBehaviour
         if (!arr[4])
         {
             audioSource2.Play();
-            Debug.Log("There is still some space left in stack");
         }
-
 
         for (int i = 0; i < arr.Length - 1; i++)
         {
@@ -57,8 +48,6 @@ public class StackPushAnswerChecker : MonoBehaviour
             {
                 audioSource2.Play();
                 scoreKeeper.DecrementScore(10);
-                Debug.Log("There are empty stack values");
-                
                 sceneLoader.LoadSceneWithDelay("StackLevel", 1f);
                 return;
             }
@@ -66,9 +55,7 @@ public class StackPushAnswerChecker : MonoBehaviour
 
         audioSource1.Play();
         scoreKeeper.IncrementScore(10);
-        sceneLoader.LoadSceneWithDelay("StackLevelPop", 1f);
+        sceneLoader.LoadSceneWithDelay("StackPopLevel", 1f);
         return;
-
-
     }
 }

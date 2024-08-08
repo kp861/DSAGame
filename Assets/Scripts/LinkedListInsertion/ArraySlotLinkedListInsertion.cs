@@ -17,10 +17,13 @@ public class ArraySlotLinkedListInsertion : MonoBehaviour, IDropHandler
     {
         if (eventData.pointerDrag != null)
         {
-
             eventData.pointerDrag.transform.position = this.transform.position;
             LinkedListForInsertion.AddValues(eventData.pointerDrag.GetComponent<DraggablePointer>().name, this.index);
-            //LinkedListForInsertion.ModifyBools(index, true);
+            //DragDropLinkedListInsertion.ChangeDropZone(true);
+
+
         }
     }
+
+    
 }

@@ -1,8 +1,6 @@
 using UnityEngine;
-
-public class ArrayBubbleSort : MonoBehaviour
+public class ArrayInsertionSort : MonoBehaviour
 {
     public int index; 
     public int value;
-
 }

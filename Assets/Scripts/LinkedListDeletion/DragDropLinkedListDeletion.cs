@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-
 public class DragDropLinkedListDeletion : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler
 {
     private RectTransform rectTransform;
@@ -51,7 +50,6 @@ public class DragDropLinkedListDeletion : MonoBehaviour, IPointerDownHandler, IB
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        //Debug.Log("Ending Drag");
         if (isDroppedInZone) return;
 
         canvasGroup.alpha = 1f;
@@ -72,12 +70,12 @@ public class DragDropLinkedListDeletion : MonoBehaviour, IPointerDownHandler, IB
     }
     public void OnPointerDown(PointerEventData eventData)
     {
-        //Debug.Log("OnPointerDown");
+        Debug.Log("OnPointerDown");
     }
 
     public void OnDrop(PointerEventData eventData)
     {
-        //Debug.Log("OnDrop");
+        Debug.Log("OnDrop");
     }
 
     public void ChangeDropZone(bool val)

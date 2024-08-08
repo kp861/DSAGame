@@ -31,7 +31,6 @@ public class StackPopDragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDra
             timerImage.fillAmount = timer.fillFraction;
         }
     }
-
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -49,7 +48,6 @@ public class StackPopDragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDra
     {
         if (isDroppedInZone) return;
         rectTransform.anchoredPosition += eventData.delta;
-
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -76,8 +74,6 @@ public class StackPopDragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDra
                 {
                     if (bools[i])
                     {
-
-                        Debug.Log($"Found a value above the draggalbe value");
                         this.transform.position = originalPosition;
                         scoreKeeper.DecrementScore(5);
                         AudioSource.Play();
@@ -89,7 +85,6 @@ public class StackPopDragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDra
                 {
                     if (!bools[i])
                     {
-                        Debug.Log($"Found a value below the draggalbe value");
                         scoreKeeper.DecrementScore(5);
                         AudioSource.Play();
                         this.transform.position = originalPosition;
@@ -102,7 +97,6 @@ public class StackPopDragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDra
             {
                 if (bools[val + 1] == true)
                 {
-                    Debug.Log($"Found a value above the draggalbe value");
                     scoreKeeper.DecrementScore(5);
                     AudioSource.Play();
                     this.transform.position = originalPosition;
@@ -133,14 +127,12 @@ public class StackPopDragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDra
         Debug.Log("OnDrop");
         if (eventData.pointerDrag != null && eventData.pointerEnter.GetComponent<StackPopArraySlot>() != null)
         {
-            Debug.Log("Dropped on Arrray");
             scoreKeeper.DecrementScore(5);
             AudioSource.Play();
             eventData.pointerDrag.transform.position = this.transform.position;
         }
         else if (eventData.pointerDrag != null && eventData.pointerEnter.GetComponent<StackPopArraySlot>() == null)
         {
-            Debug.Log("Dropping");
             if (OnValidDrop)
             {
                 eventData.pointerDrag.transform.position = this.transform.position;

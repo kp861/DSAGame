@@ -22,16 +22,11 @@ public class TimerForIndexingLevel : MonoBehaviour
 
     void Update()
     {
-        //if (panel.active)
-        //{
-        //    isTimerRunning = false;
-        //}
         if (isTimerRunning)
         {
             UpdateTimer();
         }
     }
-
     private void UpdateTimer()
     {
         timerValue -= Time.deltaTime;
@@ -46,7 +41,6 @@ public class TimerForIndexingLevel : MonoBehaviour
             {
                 isAnswering = false;
                 timerValue = TimeToCompleteLevel;
-                // You can add logic here if needed when switching to the next state
             }
         }
         else
@@ -69,7 +63,6 @@ public class TimerForIndexingLevel : MonoBehaviour
 
     private void HandleGameOver()
     {
-        Debug.Log("Time's up! Player lost.");
         StopTimer();
     }
 

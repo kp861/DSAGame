@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class EndScreen : MonoBehaviour
+public class EndScreenArrIndexing : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI finalScoreText;
     [SerializeField] GameObject[] elementsToDisable; // Add references to all elements to disable
@@ -10,13 +10,13 @@ public class EndScreen : MonoBehaviour
     void Start()
     {
         scoreKeeper = FindObjectOfType<ScoreKeeper>();
-        Timer.TimerEnded += OnTimerEnded; // Subscribe to the TimerEnded event
+        TimerForIndexingLevel.TimerEnded += OnTimerEnded; // Subscribe to the TimerEnded event
         gameObject.SetActive(false); // Initially hide the end screen
     }
 
     void OnDestroy()
     {
-        Timer.TimerEnded -= OnTimerEnded; // Unsubscribe from the TimerEnded event
+        TimerForIndexingLevel.TimerEnded -= OnTimerEnded; // Unsubscribe from the TimerEnded event
     }
 
     private void OnTimerEnded()
@@ -27,7 +27,7 @@ public class EndScreen : MonoBehaviour
 
     public void ShowFinalScore()
     {
-        gameObject.SetActive(true); // Show the end screen
+        gameObject.SetActive(true); 
         finalScoreText.text = "You LOST!\n" + "You got a score of " + scoreKeeper.GetScore() + ".";
     }
 
@@ -37,6 +37,7 @@ public class EndScreen : MonoBehaviour
         {
             element.SetActive(false);
         }
+
         scoreKeeper.SetScore(0);
     }
 }

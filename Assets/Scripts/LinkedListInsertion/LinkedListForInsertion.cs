@@ -44,10 +44,8 @@ public class LinkedListForInsertion : MonoBehaviour
 
         if (value == "UpArrow" && index == 3)
         {
-            Debug.Log("UpArrow And Index3");
             if (bools[2] == false && bools[4] == true)
             {
-                Debug.Log("UpArrowCorrect");
                 bools[2] = true;
             }
         }
@@ -56,7 +54,6 @@ public class LinkedListForInsertion : MonoBehaviour
         {
             if (bools[2] == true && bools[4] == true)
             {
-                Debug.Log("SideArrowCorrect");
                 bools[3] = true;
             }
         }
@@ -65,19 +62,16 @@ public class LinkedListForInsertion : MonoBehaviour
         {
             if (bools[2] == true && bools[3] == true)
             {
-                Debug.Log("StraightArrowCorrect");
                 bools[5] = true;
             }
         }
         else if (value == "data" && index == 0)
         {
-            Debug.Log("dataCorrect");
             bools[0] = true;
         }
 
         else if (value == "next" && index == 1)
         {
-            Debug.Log("nextCorrect");
             bools[1] = true;
         }
     }
@@ -103,6 +97,5 @@ public class LinkedListForInsertion : MonoBehaviour
     {
         bools[index] = value;
         values[index] = String.Empty;
-
     }
 }

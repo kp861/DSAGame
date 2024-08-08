@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
@@ -17,8 +15,8 @@ public class ArrayChecker1 : MonoBehaviour
     public AudioSource audioSource2; // This is not used currently but kept for future use
     bool[] BoolsArr = new bool[6] { false, false, false, false, false, false };
 
-    // Store the items and their initial positions
-    public GameObject[] items; // Assign your items in the inspector
+
+    public GameObject[] items; 
     private Vector3[] initialPositions;
 
     private void Start()
@@ -30,7 +28,6 @@ public class ArrayChecker1 : MonoBehaviour
             initialPositions[i] = items[i].GetComponent<RectTransform>().anchoredPosition;
         }
 
-        // Define the arrays to check for each button
         int[] valuesForButton1 = { 6, 5, 15, 10, 9, 1 };
         int[] valuesForButton2 = { 6, 5, 15, 10, 9, 1 };
         int[] valuesForButton3 = { 6, 5, 15, 10, 9, 1 };
@@ -38,7 +35,6 @@ public class ArrayChecker1 : MonoBehaviour
         int[] valuesForButton5 = { 5, 6, 15, 1, 9, 10 };
         int[] valuesForButton6 = { 1, 5, 6, 9, 10, 15 };
 
-        // Add the ArrayCheck method to each button's onClick event with the corresponding array
         confirmationButton1.onClick.AddListener(() => ArrayCheck(valuesForButton1, 0));
         confirmationButton2.onClick.AddListener(() => ArrayCheck(valuesForButton2, 1));
         confirmationButton3.onClick.AddListener(() => ArrayCheck(valuesForButton3, 2));
@@ -72,7 +68,6 @@ public class ArrayChecker1 : MonoBehaviour
             if (index == 5 && BoolsArr.All(x => x))
             {
                 scoreKeeper.IncrementScore(5);
-                // Assuming this is the last check and should load the next scene
                 FindObjectOfType<SceneLoader>().LoadSceneWithDelay("LinearSearchLevel", 1f);
             }
         }
@@ -84,9 +79,6 @@ public class ArrayChecker1 : MonoBehaviour
             }
             scoreKeeper.DecrementScore(5);
             BoolsArr[index] = false;
-            Debug.Log("Array does not match the required pattern.");
-
-            // Reset items to their initial positions
             ResetItemsToInitialPositions();
         }
 

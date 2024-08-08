@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,18 +19,14 @@ public class InputHandler : MonoBehaviour
     {
         string input = InputField.text; 
 
-
         if (input == "8")
         {
-            Debug.Log("Correct answer");
             scoreKeeper.IncrementScore(10);
             audioSource1.Play();
-            sceneLoader.LoadSceneWithDelay("BubbleSortLevel", 1f);
+            sceneLoader.LoadSceneWithDelay("InsertionSortLevel", 1f);
         }
-
         else
         {
-            Debug.Log("Incorrect answer");
             scoreKeeper.DecrementScore(10);
             audioSource2.Play();
         }

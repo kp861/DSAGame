@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-
 public class DragDropLinkedList : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler
 {
     private RectTransform rectTransform;
@@ -42,7 +41,6 @@ public class DragDropLinkedList : MonoBehaviour, IPointerDownHandler, IBeginDrag
     {
         if (isDroppedInZone) return;
         rectTransform.anchoredPosition += eventData.delta;
-
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -54,6 +52,7 @@ public class DragDropLinkedList : MonoBehaviour, IPointerDownHandler, IBeginDrag
 
         if (eventData.pointerEnter != null && eventData.pointerEnter.GetComponent<ArraySlotLinkedList>() != null)
         {
+            Debug.Log("Dropping Element");
             isDroppedInZone = true;
         }
     }

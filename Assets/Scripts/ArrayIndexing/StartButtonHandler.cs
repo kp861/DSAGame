@@ -8,7 +8,6 @@ public class StartButtonHandler : MonoBehaviour
 
     public void OnStartButtonClick()
     {
-
         // Activate the panel
         panel.SetActive(true);
         button.gameObject.SetActive(false);

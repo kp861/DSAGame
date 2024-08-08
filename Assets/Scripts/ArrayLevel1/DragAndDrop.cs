@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using static Timer;
 
 public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler
 {
@@ -20,7 +17,6 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
         {
             Debug.LogError("Timer component not found in the scene.");
         }
-
     }
 
     void Update()
@@ -47,9 +43,7 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     {
         if (isDroppedInZone) return;
         rectTransform.anchoredPosition += eventData.delta;
-
     }
-
     public void OnEndDrag(PointerEventData eventData)
     {
         if (isDroppedInZone) return;

@@ -1,11 +1,8 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ArrayCheckBinarySearch : MonoBehaviour
 {
-    //Representation of revealed values - 75/ 6/ 20/ 9. Each book value represent a number
+    //Representation of revealed values - 75/ 6/ 20/ 9. Each bool value represent a number
     //e.g. 75 - true - it means value was revealed.
     private bool[] ArrayCheckBools = new bool[13];
     ScoreKeeper score;
@@ -14,14 +11,14 @@ public class ArrayCheckBinarySearch : MonoBehaviour
     {
         return ArrayCheckBools;
     }
+
     private Elements element;
     public ScoreKeeper scoreKeeper;
     SceneLoader sceneLoader;
     
 
     private void Start()
-    {
-        
+    {  
         element = FindObjectOfType<Elements>();
         sceneLoader = FindObjectOfType<SceneLoader>();
         score = FindObjectOfType<ScoreKeeper>();
@@ -67,9 +64,6 @@ public class ArrayCheckBinarySearch : MonoBehaviour
             }
         }
         score.DecrementScore(15);
-        return false;
-        
+        return false;       
     }
-
-    
 }

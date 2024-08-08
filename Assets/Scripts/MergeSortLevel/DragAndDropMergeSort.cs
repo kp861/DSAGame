@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -30,7 +28,6 @@ public class DragAndDropMergeSort : MonoBehaviour, IPointerDownHandler, IBeginDr
             timerImage.fillAmount = timer.fillFraction;
         }
     }
-
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -57,7 +54,6 @@ public class DragAndDropMergeSort : MonoBehaviour, IPointerDownHandler, IBeginDr
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log("On End Drag");
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
 
@@ -80,7 +76,7 @@ public class DragAndDropMergeSort : MonoBehaviour, IPointerDownHandler, IBeginDr
     {
         isDroppedInZone = false;
         rectTransform.anchoredPosition = originalPosition;
-        canvasGroup.alpha = 1f;  // Reset alpha
-        canvasGroup.blocksRaycasts = true;  // Ensure raycasts are enabled again
+        canvasGroup.alpha = 1f; 
+        canvasGroup.blocksRaycasts = true;  
     }
 }

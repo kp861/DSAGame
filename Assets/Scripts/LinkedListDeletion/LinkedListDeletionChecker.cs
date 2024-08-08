@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LinkedListDeletionChecker : MonoBehaviour
@@ -16,11 +15,9 @@ public class LinkedListDeletionChecker : MonoBehaviour
     void Start()
     {
         LinkedListForDeletion = LinkedListForDeletion.Instance;
-
         scoreKeeper = FindObjectOfType<ScoreKeeper>();
         loader = FindObjectOfType<SceneLoader>();
         Button btn = ConfirmationButton.GetComponent<Button>();
-
         btn.onClick.AddListener(CheckValues);
     }
 

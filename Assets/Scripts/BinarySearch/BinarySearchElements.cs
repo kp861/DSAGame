@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -22,7 +20,6 @@ public class BinarySearchElements : MonoBehaviour, IPointerDownHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log("OnPointerDown");
         index = eventData.pointerEnter.GetComponent<BinarySearchElements>().index;
         value = eventData.pointerEnter.GetComponent<BinarySearchElements>().value;
         if (ArrayCheckBinarySearch.CheckArray(value, index))
@@ -37,8 +34,6 @@ public class BinarySearchElements : MonoBehaviour, IPointerDownHandler
         else
         {
             AudioSource2.Play();
-        }
-        
-        
+        } 
     }
 }

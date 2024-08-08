@@ -1,16 +1,11 @@
 using System.Collections;
 using UnityEngine;
-using Unity.UI;
 using UnityEngine.UI;
-using UnityEngine.Rendering;
-
 
 public class BinarySearchPanelOpener : MonoBehaviour
 {
     public GameObject panel;
     public Button btn;
-
-
 
     public void OpenPanel()
     {

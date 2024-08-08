@@ -24,15 +24,12 @@ public class LinkedListChecker : MonoBehaviour
         {
             if (RestArrayCheck(vals))
             {
-                Debug.Log("All true");
                 AudioSource1.Play();
                 scoreKeeper.IncrementScore(10);
                 SceneLoader.LoadSceneWithDelay("LinkedListInsertion", 1f);
-
             }
             else
             {
-                Debug.Log("false");
                 AudioSource2.Play();
                 scoreKeeper.DecrementScore(10);
                 SceneLoader.LoadSceneWithDelay("LinkedListLevel", 1f);
@@ -41,7 +38,6 @@ public class LinkedListChecker : MonoBehaviour
         }
         else
         {
-            Debug.Log("false");
             AudioSource2.Play();
             scoreKeeper.DecrementScore(10);
             SceneLoader.LoadSceneWithDelay("LinkedListLevel", 1f);
@@ -55,12 +51,10 @@ public class LinkedListChecker : MonoBehaviour
         {
             if (vals[i] != "data" && vals[i + 1] != "next")
             {
-                Debug.Log("incorrect values");
                 return false;
             }
             i++;
         }
-        Debug.Log("Correct values");
         return true;
     }
 

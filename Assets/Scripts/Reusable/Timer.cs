@@ -24,21 +24,10 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
-
         if (panel.active)
         {
             isTimerRunning = false;
         }
-        //if (!panel.active)
-        //{
-        //    CheckForMouseClick();
-        //    //isTimerRunning = true;
-        //}
-
-        //if (!panel.active)
-        //{
-        //    isTimerRunning = true;
-        //}
         if (isTimerRunning)
         {
             UpdateTimer();

@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class StackPopArrayManager : MonoBehaviour
@@ -23,7 +22,6 @@ public class StackPopArrayManager : MonoBehaviour
 
     public void RemoveElementFromArray(int index)
     {
-        //elements[index] = value;
         bools[index] = false;
     }
 

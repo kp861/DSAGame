@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using static Timer;
+
 
 public class StackPushDragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler
 {
@@ -21,8 +19,7 @@ public class StackPushDragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDr
         if (timer == null)
         {
             Debug.LogError("Timer component not found in the scene.");
-        }
-        
+        }  
     }
 
     void Update()
@@ -66,15 +63,12 @@ public class StackPushDragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDr
             int index = eventData.pointerEnter.GetComponent<StackArraySlot>().index;
             bool validDrop = true;
 
-            
-            // Check if all previous slots are filled
             for (int i = 0; i < index; i++)
             {
                 if (!bools[i])
                 {
                     validDrop = false;
                     audiosource1.Play();
-                    
                     break;
                 }
             }
@@ -86,14 +80,11 @@ public class StackPushDragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDr
             }
             else
             {
-                // Reset position if drop is not valid
-                Debug.Log("Cant build stack on empty value");
                 rectTransform.anchoredPosition = originalPosition;
             }
         }
         else
         {
-            Debug.Log("Cant build stack on empty value");
             rectTransform.anchoredPosition = originalPosition;
         }
     }

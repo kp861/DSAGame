@@ -1,7 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using Unity.UI;
-
 
 public class PanelOpener : MonoBehaviour
 {

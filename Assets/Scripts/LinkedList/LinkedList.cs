@@ -3,7 +3,6 @@ using UnityEngine;
 public class LinkedList : MonoBehaviour
 {
     public string[] values;
-
     private static LinkedList instance;
     public static LinkedList Instance
     {
@@ -17,7 +16,6 @@ public class LinkedList : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            //DontDestroyOnLoad(gameObject); 
             values = new string[10];
         }
         else if (instance != this)
@@ -29,10 +27,8 @@ public class LinkedList : MonoBehaviour
     {
         return values;
     }
-
     public void AddValues(string value, int index)
     {
-        Debug.Log("Adding value");
         values[index] = value;
     }
 

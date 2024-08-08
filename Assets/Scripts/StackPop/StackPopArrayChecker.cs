@@ -1,7 +1,6 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -37,12 +36,13 @@ public class StackPopAnswerChecker : MonoBehaviour
         if (arr.Skip(1).All(x => !x))
         {
             audioSource1.Play();
-            Debug.Log("CorrectSolution");
+            scoreKeeper.IncrementScore(10);
+            sceneLoader.LoadSceneWithDelay("FinishScene", 0.5f);
         }
         else
         {
+            scoreKeeper.DecrementScore(10);
             audioSource2.Play();
         }
-
     }
 }

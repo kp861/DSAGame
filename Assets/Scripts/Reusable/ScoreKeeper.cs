@@ -1,5 +1,5 @@
 using UnityEngine;
-using TMPro;  // Make sure to include this namespace for TextMeshProUGUI
+using TMPro;  
 
 public class ScoreKeeper : MonoBehaviour
 {
