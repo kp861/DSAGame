@@ -23,7 +23,7 @@ public class InputHandler : MonoBehaviour
         {
             scoreKeeper.IncrementScore(10);
             audioSource1.Play();
-            sceneLoader.LoadSceneWithDelay("InsertionSortLevel", 1f);
+            sceneLoader.LoadSceneWithDelay("StackPushLevel", 1f);
         }
         else
         {
